@@ -22,10 +22,10 @@ def find_percentage(percentage_type: int, num1: float, num2: float) -> float:
       # Find x when x% of num1 is num2 (return %)
       return num2 / num1 * 100
     case _:
-      import useful_stuffs.IO
+      import useful_stuffs.Strings
       import useful_stuffs.Errors
       if type(percentage_type) is not int:
-        raise useful_stuffs.Errors.NoTypeMatchedError(f"percentage_type requires int, not {useful_stuffs.IO.return_type(percentage_type)}")
+        raise useful_stuffs.Errors.NoTypeMatchedError(f"percentage_type requires int, not {useful_stuffs.Strings.return_type(percentage_type)}")
       elif percentage_type < 0 and percentage_type > 2:
         raise useful_stuffs.Errors.NoValueMatchedError(f"""percentage_type can only receive values of 1, 2 and 3, not {percentage_type}
 If percentage_type is 0, you find num2% of num1
@@ -37,9 +37,9 @@ def factorial(num: int) -> int:
   Calculates the factorial of a given number
   """
   if type(num) is not int:
-    import useful_stuffs.IO
+    import useful_stuffs.Strings
     import useful_stuffs.Errors
-    raise useful_stuffs.Errors.NoTypeMatchedError(f"num requires int, not {useful_stuffs.IO.return_type(num)}")
+    raise useful_stuffs.Errors.NoTypeMatchedError(f"num requires int, not {useful_stuffs.Strings.return_type(num)}")
   if num < 0:
     import useful_stuffs.Errors
     raise useful_stuffs.Errors.InvalidInputError(f"Can't find factorial of {num} ({num}!) because {num} is < 0")
