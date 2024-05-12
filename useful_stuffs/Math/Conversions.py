@@ -173,3 +173,120 @@ All temperature units that are available are:
 1. °C/celsius
 2. °F/fahrenheit ((°F - 32) / 1.8 = °C)
 3. K/kelvin (K - 273.15 = C)""")
+
+def convert_area(starting_number: float | int, starting_unit: str, result_unit: str):
+  """
+  Convert from starting_unit to result_unit (area)
+  """
+  if type(starting_number) is not float and type(starting_number) is not int:
+    import useful_stuffs.IO
+    import useful_stuffs.Errors
+    raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_number requires float | int, not {useful_stuffs.IO.return_type(starting_number)}")
+    
+  match starting_unit:
+    case "km2":
+      result = starting_number * 100000 ** 2
+    case "hm2":
+      result = starting_number * 10000 ** 2
+    case "dam2":
+      result = starting_number * 1000 ** 2
+    case "m2":
+      result = starting_number * 100 ** 2
+    case "dm2":
+      result = starting_number * 10 ** 2
+    case "cm2":
+      result = starting_number
+    case "mm2":
+      result = starting_number / 10 ** 2
+    case "µm2":
+      result = starting_number / 10000 ** 2
+    case "square micrometer":
+      result = starting_number / 10000 ** 2
+    case "nm2":
+      result = starting_number / 10000000 ** 2
+    case "square mile":
+      result = starting_number * 160935 ** 2
+    case "yd2":
+      result = starting_number * 91.44 ** 2
+    case "ft2":
+      result = starting_number * 30.48 ** 2
+    case "inch2":
+      result = starting_number * 2.54 ** 2
+    case "square light year":
+      result = starting_number * 946066000000000000 ** 2
+    case _:
+      import useful_stuffs.IO
+      import useful_stuffs.Errors
+      if type(starting_unit) is not str:
+        raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_unit requires str, not {useful_stuffs.IO.return_type(starting_unit)}")
+      else:
+        raise useful_stuffs.Errors.NoValueMatchedError(f"""No area unit available named: {starting_unit}
+All area units that are available are:
+1. km2 (1 km2 = 10000000000 cm2)
+2. hm2 (1 hm2 = 100000000 cm2)
+3. dam2 (1 dam2 = 1000000 cm2)
+4. m2 (1 m2 = 10000 cm2)
+5. dm2 (1 dm2 = 100 cm2)
+6. cm2
+7. mm2 (1 mm2 = 1/100 cm2)
+8. µm2/square micrometer (1 µm2 = 1/100000000 cm2)
+9. nm2 (1 nm2 = 1/100000000000000 cm2)
+10. square mile (1 square mile = 25900074225 cm2)
+11. yd2 (1 yd2 = 8361.2736 cm2)
+12. ft2 (1 ft2 = 929.0304 cm2)
+13. inch2 (1 inch2 = 6.4516 cm2)
+14. square light year (1 square light year = 895040876356000000000000000000000000 cm2)""")
+
+  match result_unit:
+      case "km2":
+        return result / 100000 ** 2
+      case "hm2":
+        return result / 10000 ** 2
+      case "dam2":
+        return result / 1000 ** 2
+      case "m2":
+        return result / 100 ** 2
+      case "dm2":
+        return result / 10 ** 2
+      case "cm2":
+        return result
+      case "mm2":
+        return result * 10 ** 2
+      case "µm2":
+        return result * 10000 ** 2
+      case "square micrometer":
+        return result * 10000 ** 2
+      case "nm2":
+        return result * 10000000 ** 2
+      case "square mile":
+        return result / 160935 ** 2
+      case "yd2":
+        return result / 91.44 ** 2
+      case "ft2":
+        return result / 30.48 ** 2
+      case "inch2":
+        return result / 2.54 ** 2
+      case "square light year":
+        return result / 946066000000000000 ** 2
+      case _:
+        import useful_stuffs.IO
+        import useful_stuffs.Errors
+        if type(result_unit) is not str:
+          raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_unit requires str, not {useful_stuffs.IO.return_type(result_unit)}")
+        else:
+          raise useful_stuffs.Errors.NoValueMatchedError(f"""No area unit available named: {result_unit}
+  All area units that are available are:
+  1. km2 (1 km2 = 10000000000 cm2)
+  2. hm2 (1 hm2 = 100000000 cm2)
+  3. dam2 (1 dam = 1000000 cm2)
+  4. m2 (1 m = 10000 cm2)
+  5. dm2 (1 dm = 100 cm2)
+  6. cm2
+  7. mm2 (1 mm = 1/100 cm2)
+  8. µm2/square micrometer (1 µm = 1/100000000 cm2)
+  9. nm2 (1 nm = 1/100000000000000 cm2)
+  10. square mile (1 mile = 25900074225 cm2)
+  11. yd2 (1 yd = 8361.2736 cm2)
+  12. ft2 (1 ft = 929.0304 cm2)
+  13. inch2 (1 inch = 6.4516 cm2)
+  14. square light year (1 light year = 895040876356000000000000000000000000 cm2)""")
