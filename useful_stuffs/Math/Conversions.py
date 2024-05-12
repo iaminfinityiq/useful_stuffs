@@ -57,7 +57,7 @@ All length units that are available are:
 9. nm (1 nm = 1/10000000 cm)
 10. mile (1 mile = 160935 cm)
 11. yd (1 yd = 91.44 cm)
-12. ft (1 ft = 30.48)
+12. ft (1 ft = 30.48 cm)
 13. inch (1 inch = 2.54 cm)
 14. light year (1 light year = 946066000000000000 cm)""")
 
@@ -111,7 +111,7 @@ All length units that are available are:
 9. nm (1 nm = 1/10000000 cm)
 10. mile (1 mile = 160935 cm)
 11. yd (1 yd = 91.44 cm)
-12. ft (1 ft = 30.48)
+12. ft (1 ft = 30.48 cm)
 13. inch (1 inch = 2.54 cm)
 14. light year (1 light year = 946066000000000000 cm)""")
 
