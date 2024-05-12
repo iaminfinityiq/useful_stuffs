@@ -8,7 +8,7 @@ class NoValueMatchedError(Exception):
 
 class NoTypeMatchedError(Exception):
     """
-    No types of inputs matched the following types of inputs defined in the function
+    No types of inputs matched the following types of inputs defined in the function.
     """
 
 class InvalidInputError(Exception):
