@@ -1,7 +1,6 @@
 """
 Includes all of the functions you need for Math
 """
-
 def include(module: str):
   """
   Includes all modules in useful_stuffs.Math needed
