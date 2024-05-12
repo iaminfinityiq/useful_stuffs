@@ -1,8 +1,6 @@
 """
 Includes all of the functions you need for inputs and outputs.
 """
-import useful_stuffs
-
 def return_type(value) -> str:
   """
   Helps you get the neater value of the type. For example: return_type("Hello World") returns str
