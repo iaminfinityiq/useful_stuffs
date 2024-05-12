@@ -3,9 +3,9 @@ def convert_length(starting_number: float | int, starting_unit: str, result_unit
   Convert from starting_unit to result_unit (length)
   """
   if type(starting_number) is not float and type(starting_number) is not int:
-    import useful_stuffs.IO
+    import useful_stuffs.Strings
     import useful_stuffs.Errors
-    raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_number requires float | int, not {useful_stuffs.IO.return_type(starting_number)}")
+    raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_number requires float | int, not {useful_stuffs.Strings.return_type(starting_number)}")
 
   match starting_unit:
     case "km":
@@ -39,10 +39,10 @@ def convert_length(starting_number: float | int, starting_unit: str, result_unit
     case "light year":
       result = starting_number * 946066000000000000
     case _:
-      import useful_stuffs.IO
+      import useful_stuffs.Strings
       import useful_stuffs.Errors
       if type(starting_unit) is not str:
-        raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_unit requires str, not {useful_stuffs.IO.return_type(starting_unit)}")
+        raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_unit requires str, not {useful_stuffs.Strings.return_type(starting_unit)}")
       else:
         raise useful_stuffs.Errors.NoValueMatchedError(f"""No length unit available named: {starting_unit}
 All length units that are available are:
@@ -93,10 +93,10 @@ All length units that are available are:
     case "light year":
       return result / 946066000000000000
     case _:
-      import useful_stuffs.IO
+      import useful_stuffs.Strings
       import useful_stuffs.Errors
       if type(result_unit) is not str:
-        raise useful_stuffs.Errors.NoTypeMatchedError(f"result_unit requires str, not {useful_stuffs.IO.return_type(result_unit)}")
+        raise useful_stuffs.Errors.NoTypeMatchedError(f"result_unit requires str, not {useful_stuffs.Strings.return_type(result_unit)}")
       else:
         raise useful_stuffs.Errors.NoValueMatchedError(f"""No length unit available named: {result_unit}
 All length units that are available are:
@@ -120,9 +120,9 @@ def convert_temperature(starting_number: float | int, starting_unit: str, result
   Convert from starting_unit to result_unit (temperature)
   """
   if type(starting_number) is not float and type(starting_number) is not int:
-    import useful_stuffs.IO
+    import useful_stuffs.Strings
     import useful_stuffs.Errors
-    raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_number requires float | int, not {useful_stuffs.IO.return_type(starting_number)}")
+    raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_number requires float | int, not {useful_stuffs.Strings.return_type(starting_number)}")
 
   match starting_unit:
     case "°C":
@@ -138,10 +138,10 @@ def convert_temperature(starting_number: float | int, starting_unit: str, result
     case "kelvin":
       result = starting_number - 273.15
     case _:
-      import useful_stuffs.IO
+      import useful_stuffs.Strings
       import useful_stuffs.Errors
       if type(starting_unit) is not str:
-        raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_unit requires str, not {useful_stuffs.IO.return_type(starting_unit)}")
+        raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_unit requires str, not {useful_stuffs.Strings.return_type(starting_unit)}")
       else:
         raise useful_stuffs.Errors.NoValueMatchedError(f"""No temperature unit available named: {starting_unit}
 All temperature units that are available are:
@@ -163,10 +163,10 @@ All temperature units that are available are:
     case "kelvin":
       return result + 273.15
     case _:
-      import useful_stuffs.IO
+      import useful_stuffs.Strings
       import useful_stuffs.Errors
       if type(result_unit) is not str:
-        raise useful_stuffs.Errors.NoTypeMatchedError(f"result_unit requires str, not {useful_stuffs.IO.return_type(result_unit)}")
+        raise useful_stuffs.Errors.NoTypeMatchedError(f"result_unit requires str, not {useful_stuffs.Strings.return_type(result_unit)}")
       else:
         raise useful_stuffs.Errors.NoValueMatchedError(f"""No temperature unit available named: {result_unit}
 All temperature units that are available are:
@@ -179,9 +179,9 @@ def convert_area(starting_number: float | int, starting_unit: str, result_unit: 
   Convert from starting_unit to result_unit (area)
   """
   if type(starting_number) is not float and type(starting_number) is not int:
-    import useful_stuffs.IO
+    import useful_stuffs.Strings
     import useful_stuffs.Errors
-    raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_number requires float | int, not {useful_stuffs.IO.return_type(starting_number)}")
+    raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_number requires float | int, not {useful_stuffs.Strings.return_type(starting_number)}")
     
   match starting_unit:
     case "km2":
@@ -215,10 +215,10 @@ def convert_area(starting_number: float | int, starting_unit: str, result_unit: 
     case "square light year":
       result = starting_number * 946066000000000000 ** 2
     case _:
-      import useful_stuffs.IO
+      import useful_stuffs.Strings
       import useful_stuffs.Errors
       if type(starting_unit) is not str:
-        raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_unit requires str, not {useful_stuffs.IO.return_type(starting_unit)}")
+        raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_unit requires str, not {useful_stuffs.Strings.return_type(starting_unit)}")
       else:
         raise useful_stuffs.Errors.NoValueMatchedError(f"""No area unit available named: {starting_unit}
 All area units that are available are:
@@ -269,10 +269,10 @@ All area units that are available are:
       case "square light year":
         return result / 946066000000000000 ** 2
       case _:
-        import useful_stuffs.IO
+        import useful_stuffs.Strings
         import useful_stuffs.Errors
         if type(result_unit) is not str:
-          raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_unit requires str, not {useful_stuffs.IO.return_type(result_unit)}")
+          raise useful_stuffs.Errors.NoTypeMatchedError(f"starting_unit requires str, not {useful_stuffs.Strings.return_type(result_unit)}")
         else:
           raise useful_stuffs.Errors.NoValueMatchedError(f"""No area unit available named: {result_unit}
   All area units that are available are:
