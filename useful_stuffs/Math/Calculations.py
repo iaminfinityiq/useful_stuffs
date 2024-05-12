@@ -1,4 +1,3 @@
-
 def find_percentage(percentage_type: int, num1: float, num2: float) -> float:
   """
   Returns the result based on 3 calculation types based on the percentage_type parameter.
